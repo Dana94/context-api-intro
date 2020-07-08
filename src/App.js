@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import './App.css';
 
@@ -19,19 +18,19 @@ function App(props) {
         </div>
 
         <ul>
-          {props.colors.map(color => {
+          {/* {props.colors.map(color => {
             return <li key={color}>{color}</li>;
-          })}
+          })} */}
         </ul>
       </header>
     </div>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    colors: state.colors
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     colors: state.colors
+//   }
+// }
 
-export default connect(mapStateToProps)(App);
+export default App;
