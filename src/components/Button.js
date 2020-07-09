@@ -11,12 +11,12 @@ const Button = props => {
 
     const addColorHandler = () => {
         setIsAdded(true);
-        colorsContext.addColor(props.color); // new addColor
+        colorsContext.addColor(props.color);
     }
 
     const removeColorHandler = () => {
         setIsAdded(false);
-        colorsContext.removeColor(props.color) // new removeColor
+        colorsContext.removeColor(props.color);
     }
 
     return (
