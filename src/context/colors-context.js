@@ -1,13 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 export const ColorsContext = React.createContext({
-    colors: []
+    colors: [],
+    addColor: () => { },
+    removeColor: () => { }
 });
 
 const ColorsContextProvider = props => {
-    
+
+    const [colorsList, setColorsList] = useState([]);
+
+    const addColorHandler = (color) => {
+        const newColors = [...colorsList];
+        newColors.push(color);
+        setColorsList(newColors);
+    }
+
+    const removeColorHandler = (color) => {
+        setColorsList(colorsList.filter(aColor => aColor !== color));
+    }
+
     return (
-        <ColorsContext.Provider>
+        <ColorsContext.Provider value={{ colors: colorsList, addColor: addColorHandler, removeColor: removeColorHandler }}>
             {props.children}
         </ColorsContext.Provider>
     )

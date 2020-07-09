@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './App.css';
-
 import Button from './components/Button';
+import { ColorsContext } from './context/colors-context';
 
 function App(props) {
+
+  const colorsContext = useContext(ColorsContext);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,19 +21,13 @@ function App(props) {
         </div>
 
         <ul>
-          {/* {props.colors.map(color => {
+          {colorsContext.colors.map(color => {
             return <li key={color}>{color}</li>;
-          })} */}
+          })}
         </ul>
       </header>
     </div>
   );
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     colors: state.colors
-//   }
-// }
 
 export default App;

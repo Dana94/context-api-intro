@@ -1,34 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // added useContext
 
 import './Button.css';
-import * as actions from '../store/actions';
+import { ColorsContext } from '../context/colors-context';
 
 const Button = props => {
     const [isAdded, setIsAdded] = useState(false);
 
+    const colorsContext = useContext(ColorsContext);
+
+
     const addColorHandler = () => {
         setIsAdded(true);
-        // props.onAddColor(props.color);
+        colorsContext.addColor(props.color); // new addColor
     }
 
     const removeColorHandler = () => {
         setIsAdded(false);
-        // props.onRemoveColor(props.color);
+        colorsContext.removeColor(props.color) // new removeColor
     }
 
     return (
-        // isAdded ?
-        //     <button onClick={removeColorHandler}>Remove <br/> {props.color}</button> :
-        //     <button onClick={addColorHandler}>Add <br/> {props.color}</button>
-        <div></div>
+        isAdded ?
+            <button onClick={removeColorHandler}>Remove <br /> {props.color}</button> :
+            <button onClick={addColorHandler}>Add <br /> {props.color}</button>
     );
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         onAddColor: (color) => dispatch(actions.addColor(color)),
-//         onRemoveColor: (color) => dispatch(actions.removeColorDelay(color)),
-//     }
-// }
 
 export default Button;

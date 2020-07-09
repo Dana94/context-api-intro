@@ -4,17 +4,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './store/reducers/colors';
-
-
-// store.subscribe(() => {
-//   console.log('[Subscription]', store.getState());
-// });
+import ColorsContextProvider from './context/colors-context'; // wrap around App
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ColorsContextProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ColorsContextProvider>,
   document.getElementById('root')
 );
 
