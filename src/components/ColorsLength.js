@@ -8,9 +8,7 @@ class ColorsLength extends Component {
 
     render() {
         return (
-            <ColorsContext.Consumer>
-                {(context) => <p>There are currently {context.colors.length} colors added.</p>}
-            </ColorsContext.Consumer>
+            <p>There are currently {this.context.colors.length} colors added.</p>
         )
     }
 }
