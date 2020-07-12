@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import './App.css';
 import Button from './components/Button';
+import ColorsLength from './components/ColorsLength';
 import { ColorsContext } from './context/colors-context';
 
 function App(props) {
@@ -25,6 +26,7 @@ function App(props) {
             return <li key={color}>{color}</li>;
           })}
         </ul>
+        <ColorsLength />
       </header>
     </div>
   );
