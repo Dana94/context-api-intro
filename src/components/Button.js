@@ -1,9 +1,14 @@
-import React, { useState, useContext } from 'react'; // added useContext
+import React, { useState, useContext, useEffect } from 'react'; // added useContext
 
 import './Button.css';
 import { ColorsContext } from '../context/colors-context';
 
 const Button = props => {
+
+    useEffect(() => {
+        // keep component from re-endering
+    }, []);
+
     const [isAdded, setIsAdded] = useState(false);
 
     const colorsContext = useContext(ColorsContext);
