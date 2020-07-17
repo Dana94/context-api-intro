@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'; // added useContext
+import React, { useState, useContext, useEffect } from 'react';
 
 import './Button.css';
 import { ColorsContext } from '../context/colors-context';
@@ -6,7 +6,7 @@ import { ColorsContext } from '../context/colors-context';
 const Button = props => {
 
     useEffect(() => {
-        // keep component from re-endering
+        // keep component from re-rendering
     }, []);
 
     const [isAdded, setIsAdded] = useState(false);
